@@ -1,0 +1,17 @@
+{%extends 'base.html' %}
+{% load static %}
+{%block cs_file%}
+<link rel="stylesheet" href="{%static "blog/posts.css"%}"/>
+<link rel="stylesheet" href="{%static "blog/post.css"%}"/>
+{%endblock%}
+{%block pBody%}
+
+<section id="all-posts">
+    <h2>my latest Thoughts</h2>
+    <ul>
+        {%for post in posts%}
+        {%include "blog/includes/post.html"%}
+        {%endfor%}
+    </ul>
+</section>
+{%endblock%}

@@ -1,0 +1,22 @@
+{%extends 'base.html' %}
+{% load static %}
+{%block cs_file%}
+<link rel="stylesheet" href="{%static "blog/pdetail.css"%}"/>
+<link rel="stylesheet" href="{%static "blog/post.css"%}"/>
+{%endblock%}
+{%block pBody%}
+<section id="summary">
+    <h2>{{ post.title}}</h2>
+    <article class="post">
+        <img src="{%static "blog/"|add:post.image%}" alt="{{post.title}}">
+        <address>by {{post.author}}</addres>
+        <div>Last updated on<time>{{post.date}}</time></div>
+    </article>
+</section>
+<main>
+    <p>
+     {{post.content}} 
+    </p>
+</main>
+
+{%endblock%}
